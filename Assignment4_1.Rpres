@@ -1,0 +1,99 @@
+Developing Data Products Assignment Week 4
+========================================================
+author: Sanyam Jain
+date: 10 April 2018
+autosize: true
+
+Introduction to App
+========================================================
+
+This application is based on San Francisco Park Scores from kaggle (https://www.kaggle.com/danofer/sf-parks/data).
+The data contains average quarterly park evaluation scores in San Francisco, from Q3 FY2005 to Q4 FY2014.
+Data includes merged data with Recreation and Parks Facilities data, including location and descriptions.
+
+This application is divided in 5 tabs as follows:
+
+- Introduction: Contains a breif introduction
+
+- Data Summary: Contains the summary of the dataset
+
+- Data: Contains the data of the Zipcodes selected from the dropdown in the sidebar
+
+- Histogram of Scores: Contains a histogram of the Scores of the Zipcodes selected in the dropdown with number of bins set using the slider.
+Also various types of distributions can be plotted using the radio buttons.
+The bins of different zipcodes can by diffrentiated by color.
+
+- Plot: Contains a Scatter Plot of Square Feet of park vs its Score for the selected zipcodes.
+Different available facilities can also be seen by the color in the plot.
+
+About the Dataset
+========================================================
+San Francisco Park Scores
+
+Context: 
+Average quarterly park evaluation scores in San Francisco, from Q3 FY2005 to Q4 FY2014.
+
+Content: 
+Data includes merged data with Recreation and Parks Facilities data, including location and descriptions. Location (LatLong) data missing for 775 rows.
+
+Acknowledgements: 
+The data is provided by San Francisco Recreation & Parks Department via the San Francisco Open Data Portal. Sources: - Park Scores 2005-2014.
+Recreation and Parks Facilities Facilities maintained by the Recreation and Parks Department. A facility in this dataset represents a structural or physical amenity within a property's boundaries.
+
+Kaggle Link: https://www.kaggle.com/danofer/sf-parks
+
+Objectives 1
+========================================================
+- To create a Shiny Application :
+
+Application is hosted at : 
+https://samjain27.shinyapps.io/Assignment4/
+
+Review criteria for this assignment is as below :
+- Was there enough documentation on the shiny site for a user to get started using the application?
+- Did the application run as described in the documentation?
+-Was there some form of widget input (slider, textbox, radio buttons, checkbox, …) in either ui.R or a custom web page?
+-Did server.R perform some calculations on the input in server.R?
+-Was the server calculation displayed in the html page?
+-Was the app substantively different than the very simple applications built in the class? Note, it’s OK if the app is simple and based on the one presented in class. I just don’t want it to be basically a carbon copy of the examples we covered. For example, if someone simply changed the variable names, then this would not count. However, a prediction algorithm that had a similar layout would be fine.
+-Here’s your opportunity to give the app +1 for being well done, or neat, or even just a solid effort.
+
+Objectives 2
+========================================================
+- To create a R Presentation :
+Presentation is hosted at: 
+https://rpubs.com/samjain_27/ddpass4
+
+Review criteria for this assignment is as below :
+- Was the presentation completed in slidify or R Presenter?
+- Was it 5 pages?
+- Did it contain an R expression that got evaluated and displayed?
+- Did it contain an R expression that got evaluated and displayed?
+- Was it hosted on github or Rpubs?
+- Was the server calculation displayed in the html page?
+- Here’s your opportunity to give this presentation a +1 for being well done. Did they tinker around with the default style? Was the presentation particularly lucid and well organized? In other words, the student made a legitimate try.
+- There were no R errors displayed in the presentation.
+
+Structure of data
+========================================================
+```{r, echo=FALSE}
+data = read.csv("park_scores.csv")
+str(data)
+
+```
+
+
+Plot of Scores
+========================================================
+```{r, echo=FALSE}
+data = read.csv("park_scores.csv")
+hist(data$Score,xlab="Score",breaks = 10)
+
+```
+
+
+Links
+========================================================
+- Shiny App: https://samjain27.shinyapps.io/Assignment4/
+- Rpubs Presentation: https://rpubs.com/samjain_27/ddpass4
+- Github Files: https://github.com/samjain27/DevelopingDataProducts
